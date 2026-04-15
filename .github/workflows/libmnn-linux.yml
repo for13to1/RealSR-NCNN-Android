@@ -109,7 +109,7 @@ jobs:
       - name: build mnn
         id: mnn
         run: |
-          mkdir build ;cd build; cmake ..  -DCMAKE_BUILD_TYPE=Release -DMNN_TENSORRT=OFF -DMNN_OPENGL=OFF  -DMNN_OPENCL=ON  -DMNN_VULKAN=ON  -DMNN_CUDA=ON  -DMNN_SEP_BUILD=OFF  && make -j$(nproc)
+          mkdir build ;cd build; cmake ..  -DCMAKE_BUILD_TYPE=Release -DMNN_TENSORRT=OFF -DMNN_OPENGL=OFF  -DMNN_OPENCL=ON  -DMNN_VULKAN=ON  -DMNN_CUDA=OFF  -DMNN_SEP_BUILD=OFF  && make -j$(nproc)
           mkdir ../libmnn-${{ matrix.sysname }}-cuda${{ matrix.cuda }}-opencl-vulkan-cpu; cd ../libmnn-${{ matrix.sysname }}-cuda${{ matrix.cuda }}-opencl-vulkan-cpu
           cp ../build/*.so ./ ; ls -lh
         working-directory: 3rdparty/MNN
